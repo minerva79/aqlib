@@ -16,7 +16,7 @@ percent <- function(x, digits = 2, format = "f", ...) {
 }
 
 # calculating standard error
-stderr <- function(x) sqrt(var(x,na.rm=TRUE)/length(na.omit(x)))
+stdErr <- function(x) sqrt(var(x,na.rm=TRUE)/length(na.omit(x)))
 
 # find specific term across scripts/files
 findTerm <- function(x, file.list, full="n"){
@@ -27,7 +27,7 @@ findTerm <- function(x, file.list, full="n"){
                  obg <- unlist(line.ret[ww])
                  if(length(obg)){
                    obh <- readLines(names(line.ret[ww]), warn=FALSE)[obg]
-                   paste(paste0("line:", obg), obh, sep="   ")  
+                   paste(paste0("line:", obg), obh, sep="   ")
                  }else{
                    paste('search term:', x, 'does not appear in', ww)
                  }},
