@@ -3,7 +3,7 @@
 # Library loading functions #
 lib <- function(type=c("dat", "ggp2", "mgcv")){
   libs_ <- c()
-  if(any(type %in% "dat")) libs_ <- c(libs_, "plyr", "dplyr", "tidyr")
+  if(any(type %in% "dat")) libs_ <- c(libs_, "plyr", "dplyr", "tidyr", "broom")
   if(any(type %in% "ggp2")) libs_ <- c(libs_, "ggplot2", "grid", "gridExtra")
   if(any(type %in% "mgcv")) libs_ <- c(libs_, "mgcv", "visreg")
   cat("attaching packages::", paste(libs_, collapse=", "))
@@ -14,6 +14,15 @@ lib <- function(type=c("dat", "ggp2", "mgcv")){
 percent <- function(x, digits = 2, format = "f", ...) {
   paste0(formatC(100 * x, format = format, digits = digits, ...), "%")
 }
+
+# returns string w/o leading whitespace
+trim.leading <- function (x)  sub("^\\s+", "", x)
+
+# returns string w/o trailing whitespace
+trim.trailing <- function (x) sub("\\s+$", "", x)
+
+# returns string w/o leading or trailing whitespace
+trim <- function (x) gsub("^\\s+|\\s+$", "", x)
 
 # calculating standard error
 stdErr <- function(x) sqrt(var(x,na.rm=TRUE)/length(na.omit(x)))

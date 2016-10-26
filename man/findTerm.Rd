@@ -30,3 +30,7 @@ file.list <- list.files(pattern="\\\.r$", ignore.case=T)
 findTerm("ipsum", file.list)
 unlink(c("lorem.R", "ipsum.R"))
 }
+
+\author{
+Adam Quek
+}
