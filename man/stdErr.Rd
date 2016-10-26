@@ -20,3 +20,4 @@ Standard error returned as the square root of division between variance of x and
 \examples{
 x <- rnorm(50, mean=5, sd=1)
 stdErr(x)
+}
