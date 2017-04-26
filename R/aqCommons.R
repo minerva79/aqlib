@@ -51,3 +51,21 @@ findTerm <- function(x, file.list, full="n"){
   names(line.ret2) <- file.list
   line.ret2[!sapply(line.ret2, is.null)]
 }
+
+# return summary statistics from specified/named variable (`varname`) of a data.frame (`data`)
+
+checkVar <- function(varname, data){
+  val <- data[, varname]
+  tmp <- data.frame(mean = mean(val),
+                    sd = sd(val),
+                    IQR = IQR(val),
+                    `0%`= min(val),
+                    `25%` = quantile(val, 0.25),
+                    `50%` = median(val),
+                    `75%` = quantile(val, .75),
+                    `100%` = max(val),
+                    n = length(val))
+  names(tmp) <- c("mean", "sd", "IQR", "`0%`", "`25%`", "`50%`", "`75%`", "`100%`", "n")
+  rownames(tmp) <- varname
+  return(tmp)
+}
