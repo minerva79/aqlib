@@ -1,20 +1,23 @@
 \name{checkVar}
 \alias{checkVar}
 \title{
-Summary statistics from named variable of a data.frame
+Generate summary statistics (checkVar)
 }
+
 \description{
 Summary statistics calculated from named variable of a data.frame.
 The named variable must be in numeric form with no missing values.
 
 Summary statistics include: mean, standard deviation (sd), interquartile range (IQR), percentile value (0, 25, 50, 75 and 100 percentiles) and count (length)
 }
+
 \usage{
 checkVar(varname, data)
 }
-%- maybe also 'usage' for other objects documented here.
+
+
 \arguments{
-  \item{varname}{Variable name of data.set. The named variable must be in numeric form with no missing values.
+  \item{varname}{Variable name of data.set. The named variable must be in numeric form with no missing values.}
   \item{data}{data.frame object}
 }
 
